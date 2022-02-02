@@ -22,7 +22,7 @@
     <title>Work Day Scheduler</title>
   </head>
 
-  <body>
+  <body onload="styleCalendar()">
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
@@ -30,38 +30,35 @@
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
-      <div class="row">
-        <div class="col-1 d-flex  mx-auto my-auto"><p>9:00</p></div>
-        <div id="hr9" class="col-10 textCol">
-          <textarea
-            class="form-control textarea rounded-3"
+      <div class="row align-items-top time-block" id="hr9">
+        <div class="col-1 hour"><p>9:00</p></div>
+        <div class = "col-10 description">
+          <textarea class= "form-control textarea my-0 rounded-1"
             id="event9"
-            type="text"
-            rows="3">
+            type="text">
           </textarea>
           </div> 
-          <div class="col-1 my-col">
+          <div class="col-1">
             <button
               id="btn9"
               class="btn saveBtn"
               data="9"
               type="button"
             >
-            Save
+              Save
             </button>
         </div>    
       </div>
-      <div class="row">
-        <div class="col-1 d-flex  mx-auto my-auto"><p>10:00</p></div>
-        <div id="hr9" class="col-10 textCol">
-          <textarea
-            class="form-control textarea rounded-3"
+      <div class="row align-items-top" id="hr10">
+        <div class="col-1 hour"><p>10:00</p></div>
+        <div class = "col-10">
+          <textarea class= "form-control textarea rounded-3"
             id="event10"
             type="text"
             rows="3">
           </textarea>
           </div> 
-          <div class="col-1 my-col mx-auto my-auto">
+          <div class="col-1">
             <button
               id="btn10"
               class="btn saveBtn"
@@ -72,17 +69,16 @@
             </button>
         </div>    
       </div>
-      <div class="row">
-        <div class="col-1 d-flex  mx-auto my-auto"><p>11:00</p></div>
-        <div id="hr9" class="col-10 textCol">
-          <textarea
-            class="form-control textarea rounded-3"
+      <div class="row align-items-start" id="hr11">
+        <div class="col-1 hour"><p>11:00</p></div>
+        <div class = "col-10">
+          <textarea class= "form-control textarea rounded-3"
             id="event11"
             type="text"
             rows="3">
           </textarea>
           </div> 
-          <div class="col-1 my-col mx-auto my-auto">
+          <div class="col-1">
             <button
               id="btn11"
               class="btn saveBtn"
@@ -94,8 +90,8 @@
         </div>    
       </div>
       <div class="row">
-        <div class="col-1 d-flex  mx-auto my-auto"><p>12:00</p></div>
-        <div id="hr9" class="col-10 textCol">
+        <div class="col-1 hour  mx-auto my-auto"><p>12:00</p></div>
+        <div id="hr12" class="col-10 textCol">
           <textarea
             class="form-control textarea rounded-3"
             id="event12"
@@ -115,7 +111,7 @@
         </div>    
       </div>
       <div class="row">
-        <div class="col-1 d-flex  mx-auto my-auto"><p>13:00</p></div>
+        <div class="col-1 hour  mx-auto my-auto"><p>13:00</p></div>
         <div id="hr9" class="col-10 textCol">
           <textarea
             class="form-control textarea rounded-3"
@@ -136,7 +132,7 @@
         </div>    
       </div>  
       <div class="row">
-        <div class="col-1 d-flex  mx-auto my-auto"><p>14:00</p></div>
+        <div class="col-1 hour  mx-auto my-auto"><p>14:00</p></div>
         <div id="hr14" class="col-10 textCol">
           <textarea
             class="form-control textarea rounded-3"
@@ -157,7 +153,7 @@
         </div>    
       </div>  
       <div class="row">
-        <div class="col-1 d-flex  mx-auto my-auto"><p>15:00</p></div>
+        <div class="col-1 hour  mx-auto my-auto"><p>15:00</p></div>
         <div id="hr15" class="col-10 textCol">
           <textarea
             class="form-control textarea rounded-3"
@@ -178,7 +174,7 @@
         </div>    
       </div>  
       <div class="row">
-        <div class="col-1 d-flex  mx-auto my-auto"><p>16:00</p></div>
+        <div class="col-1 hour  mx-auto my-auto"><p>16:00</p></div>
         <div id="hr16" class="col-10 textCol">
           <textarea
             class="form-control textarea rounded-3"
@@ -199,7 +195,7 @@
         </div>    
       </div>  
       <div class="row">
-        <div class="col-1 d-flex  mx-auto my-auto"><p>17:00</p></div>
+        <div class="col-1 hour  mx-auto my-auto"><p>17:00</p></div>
         <div id="hr17" class="col-10 textCol">
           <textarea
             class="form-control textarea rounded-3"
@@ -228,5 +224,6 @@
   </footer>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
