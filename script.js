@@ -18,15 +18,16 @@ function styleCalendar(){
 };
 };
 
+//click save button to add event to storage
+$('.saveBtn').on('click', addTodo);
 
-$('.btn').on('click', addTodo);
-
-
+//add item to local storage based on save button clicked
 function addTodo(event) {
     var key = event.target.attributes.data.value;
     var todoItem = "event" + key;
     console.log(todoItem);
-    var todo = document.querySelector(todoItem)
+    var todo = document.getElementById('event' + key)
+    console.log(todo);
     var object = {
         hourID: key,
         todo: todo.value,
@@ -34,5 +35,28 @@ function addTodo(event) {
     
     todoList.push(object);
     
-    localStorage.setItem(key,object.todo);
+    localStorage.setItem(object.hourID,object.todo);
 }
+
+//retrieve local storage
+function populateCalendar () {
+  for(i=9; i<18; i++){
+      var updateTodo = localStorage.getItem(i,i.value)
+      var key = document.getElementById('event'+i);
+      key.value = updateTodo
+  }
+}    
+//on page load, style the calendar based on local time and populate events from local storage
+function calendar(){
+  styleCalendar();
+  populateCalendar();
+}
+
+//empty local storage when button is clicked
+function clearCalendar () {
+  localStorage.clear();
+  location.reload();
+}
+
+//clear calendar button
+$('.btn-danger').on('click', clearCalendar);
