@@ -6,14 +6,20 @@ var timeArray = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
 //Runs on load to evaluate to add css class based on time
 function styleCalendar(){
-    for(var i=0; i <timeArray.length; i++){
-    var rowId = "#hr" + timeArray[i];
+    for(i=0; i<timeArray.length; i++){
+    var rowId = "hr" + timeArray[i];
+    console.log(rowId);
+    console.log(hr);
+    console.log(i);
   if (timeArray[i] < hr) {
-    $(rowId).addClass('past');
-  } else if (timeArray[i] === hr) {
-    $(rowId).addClass('present');
-  } else if (timeArray[i] > hr) {
-    $(rowId).addClass('future');
+    rowElement = document.getElementById(rowId);
+    rowElement.classList.add("past");    
+  } else if (i === hr) {
+    rowElement = document.getElementById(rowId);
+    rowElement.classList.add("present");  
+  } else if (i > hr) {
+    rowElement = document.getElementById(rowId);
+    rowElement.classList.add("future");  
   }
 };
 };
