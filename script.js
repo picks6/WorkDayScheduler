@@ -1,13 +1,13 @@
 $(currentDay).text(moment().format("dddd, MMMM Do"));
 
 var hr = moment().format("HH");
-var todoList = [];
 var timeArray = [9, 10, 11, 12, 13, 14, 15, 16, 17];
+var todoList = [];
 
 //Runs on load to evaluate to add css class based on time
 function styleCalendar(){
     for(i=0; i<timeArray.length; i++){
-    var rowId = "hr" + timeArray[i];
+    var rowId = "event" + timeArray[i];
     console.log(rowId);
     console.log(hr);
     console.log(i);
@@ -60,8 +60,10 @@ function calendar(){
 
 //empty local storage when button is clicked
 function clearCalendar () {
-  localStorage.clear();
-  location.reload();
+  if (window.confirm("This will clear your calendar. Are you sure?") === true){
+    localStorage.clear();
+    location.reload();
+  };
 }
 
 //clear calendar button
